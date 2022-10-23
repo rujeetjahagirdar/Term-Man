@@ -15,7 +15,6 @@ def quit_menu():
     try:
         if q == 'Y':
             print('quitting...')
-            quit()
         elif q == 'N':
             return generate()
         else:
