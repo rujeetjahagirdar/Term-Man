@@ -13,31 +13,8 @@ print("""\n\n
 
 
 p = input('press enter to continue: ')
-if p == 'decrypt':
-    try:
-        txt_files = [f for f in os.listdir('.') if f.endswith('.txt')]
-        if len(txt_files) != 0:
-            raise ValueError('There should be a txt file in the current directory')
 
-        key = ''
-        with open('Decrypter.key', 'rb') as file:
-            file.write(key)
-
-        fernet = Fernet(key)
-
-        with open(f'{txt_files}', 'rb') as enc_file:
-            encrypted = enc_file.read()
-
-        decrypted = fernet.decrypt(encrypted)
-
-        with open(f'{txt_files}', 'wb') as dec_file:
-            dec_file.write(decrypted)
-
-
-
-    except:
-        print('--\n-----Invalid-Input\n--')
-elif p == 'quit':
+if p == 'quit':
     print('quitting...')
     quit()
 
